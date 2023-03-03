@@ -1,0 +1,35 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  background: #004643 !important;
+}
+
+.navbar li a {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#header {
+  background: #004643 !important;
+  height: 41.6rem;
+}
+
+.right-header {
+  justify-content: end;
+}
+
+@media (max-width:480px) {
+  .title-header {
+    margin-top: 3em !important;
+  }
+  .img-header {
+    width: 23em;
+  }
+  .right-header {
+    justify-content: center !important;
+    margin-top: 2em !important;
+  }
+}

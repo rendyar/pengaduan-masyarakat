@@ -1,0 +1,15 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.right {
+  height: 47.5rem;
+  background-image: url(../img/bg-login.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left h4 {
+  /* font-size: 20px; */
+  font-weight: 600;
+}

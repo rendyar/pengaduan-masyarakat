@@ -1,0 +1,23 @@
+.bg-register {
+  width: 100%;
+  height: 47.5rem;
+  background: url(../img/bg-register.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container {
+  padding-right: 20rem;
+  padding-left: 20rem;
+}
+@media (max-width:480px) {
+  .container {
+    padding: 1rem;
+  }
+}
+.card {
+  margin-top: 3.5rem;
+}
+a {
+  text-decoration: none;
+  color: green;
+}
