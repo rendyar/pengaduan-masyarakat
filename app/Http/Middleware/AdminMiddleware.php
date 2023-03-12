@@ -17,11 +17,11 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if( Auth::user() && Auth::user()->roles == 'ADMIN') {
+        if( Auth::user() && Auth::user()->roles == 'admin') {
 
             return $next($request);
         } 
-        else if( Auth::user() && Auth::user()->roles == 'PETUGAS') {
+        else if( Auth::user() && Auth::user()->roles == 'petugas') {
         
             return $next($request);
         }

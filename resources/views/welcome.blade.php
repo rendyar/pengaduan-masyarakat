@@ -13,8 +13,13 @@
 
     <title>Laporan Masyarakat</title>
 </head>
+<style>
+  .card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+</style>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light stroke">
         <div class="container">
           <a class="navbar-brand" href="#"><img src="{{asset('front/img/logo.png')}}" style="width: 8em" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +44,7 @@
           <div class="col-md-6 title-header" style="margin-top: 13rem">
             <h1 class="text-white" style="font-weight: bold">Layanan Laporan/Pengaduan<br>Masyarakat Online</h1>
             <p class="fw-light" style="color: #ABD1C6">Sampaikan laporan masalah Anda di sini, kami akan memprosesnya dengan cepat.</p>
-            <a href="" class="btn btn-warning text-white">Laporkan!</a>
+            <a href="{{url('/dashboard-masyarakat')}}" class="btn btn-warning text-white">Laporkan!</a>
           </div>
           <div class="col-md-6 d-flex right-header" style="margin-top: 7rem">
             <img class="img-header" src="{{asset('front/img/layer 1 1.svg')}}" alt="">
@@ -48,7 +53,7 @@
       </div>
     </section>
 
-    <section id="tata_cara" class="mt-5">
+    <section id="tata_cara" class=" py-5">
       <div class="container">
         <div class="row">
           <div class="col-md-3">
@@ -107,9 +112,8 @@
       </div>
     </section>
 
-    <footer class="text-center font-medium bg-blue-200 py-5">
-      © {{ now()->year }} PENGKAT | By
-      <a href="https://madfariz.my.id/" class="text-blue-500" target="_blank">MadFariz</a>
+    <footer class="text-center text-white font-medium py-3">
+      © {{ now()->year }} Bagus Wicaksana
     </footer>
 
 

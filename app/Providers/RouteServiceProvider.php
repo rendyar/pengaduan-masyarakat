@@ -40,17 +40,17 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/auth.php'));
 
-            // $role = collect([
-            //     'admin',
-            //     'kelompok',
-            //     'pendis',
-            //     'verifikator'
-            // ]);
+            $role = collect([
+                'admin',
+                'petugas',
+                'masyarakat',
+                // 'verifikator'
+            ]);
 
-            // $role->map(function ($role) {
-            //     Route::middleware(['web', 'auth'])
-            //         ->group(base_path("routes/$role.php"));
-            // });
+            $role->map(function ($role) {
+                Route::middleware(['web', 'auth'])
+                    ->group(base_path("routes/$role.php"));
+            });
         });
     }
 

@@ -37,19 +37,27 @@
                 <input value="" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
+                <label for="jenis_kelamin" class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
+                <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
+                  <option selected>Pilih jenis kelamin</option>
+                  <option value="laki-laki">Laki-laki</option>
+                  <option value="perempuan">Perempuan</option>
+                </select>
+              </div>
+              <div class="mb-3">
                 <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
                 <input value="" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                 <label for="phone" class="form-label">Nomor Whatsapp <span class="text-danger">*</span></label>
-                <input value="" name="phone" type="number" class="form-control" id="phone" aria-describedby="emailHelp">
+                <input value="" name="telepon" type="number" class="form-control" id="phone" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
                 <input type="password" name="password" class="form-control" id="password">
               </div>
               <div class="mb-3">
-                <label for="password_confirmation" class="form-label">Confirm Password <span class="text-danger">*</span></label>
+                <label for="password_confirmation" class="form-label">Konfirmasi Password <span class="text-danger">*</span></label>
                 <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
               </div>
               <button type="submit" class="btn btn-primary px-5">Kirim</button>
