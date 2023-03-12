@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\MasyarakatController;
-use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\AuthMasyarakatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +47,17 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/login-masyarakat', [AuthMasyarakatController::class, 'index'])->name('login-masyarakat');
+Route::post('/proses-masyarakat', [AuthMasyarakatController::class, 'proses'])->name('proses-masyarakat');
+Route::get('/logout-masyarakat', [AuthMasyarakatController::class, 'logout'])->name('logout-masyarakat');
+
+Route::group(['middleware'=>'masyarakat'], function() {
+    Route::get('/dashboard-masyarakat', [MasyarakatController::class, 'create'])->name('dashboard-masyarakat');
+    Route::get('/pengaduan', [MasyarakatController::class, 'index'])->name('pengaduan-show');
+    Route::post('/dashboard-masyarakat-store', [MasyarakatController::class, 'store'])->name('dashboard-masyarakat-store');
+    Route::delete('/pengaduan-delete/{id}', [MasyarakatController::class, 'destroy'])->name('pengaduan-destroy');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -53,10 +66,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/pengaduan', [PengaduanController::class, 'index'])->name('admin.pengaduan');
     Route::get('/admin/pengaduan/detail/{id}', [PengaduanController::class, 'show'])->name('admin.pengaduan.detail');
     
-    Route::get('/dashboard-masyarakat', [MasyarakatController::class, 'create'])->name('dashboard-masyarakat');
-    Route::get('/pengaduan', [MasyarakatController::class, 'index'])->name('pengaduan-show');
-    Route::post('/dashboard-masyarakat-store', [MasyarakatController::class, 'store'])->name('dashboard-masyarakat-store');
-    Route::delete('/pengaduan-delete/{id}', [MasyarakatController::class, 'destroy'])->name('pengaduan-destroy');
+    // Route::get('/dashboard-masyarakat', [MasyarakatController::class, 'create'])->name('dashboard-masyarakat');
+    // Route::get('/pengaduan', [MasyarakatController::class, 'index'])->name('pengaduan-show');
+    // Route::post('/dashboard-masyarakat-store', [MasyarakatController::class, 'store'])->name('dashboard-masyarakat-store');
+    // Route::delete('/pengaduan-delete/{id}', [MasyarakatController::class, 'destroy'])->name('pengaduan-destroy');
 
     Route::get('/petugas', [PetugasController::class, 'index'])->name('admin.petugas');
     Route::get('/tambah-petugas', [PetugasController::class, 'create'])->name('admin.tambah-petugas');
