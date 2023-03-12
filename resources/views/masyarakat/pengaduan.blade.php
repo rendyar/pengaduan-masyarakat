@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.masyarakat')
 @section('title', 'Laporan')
 
 @push('css')

@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthMasyarakatController extends Controller
 {
- 
+  
+
     public function index()
     {
 

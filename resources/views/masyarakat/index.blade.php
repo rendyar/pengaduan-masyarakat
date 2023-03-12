@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.masyarakat')
 @section('Laporkan!')
 
 @push('css')
@@ -40,7 +40,7 @@
         <div class="card-body">
             <form action="{{url('/dashboard-masyarakat-store')}}" method="POST" enctype="multipart/form-data">
               @csrf
-              <input type="number" style="display: none" name="user_id" value="{{Auth::user()->id}}">
+              <input type="number" style="display: none" name="user_id" value="{{ auth()->guard('masyarakat')->user()->id }}">
 
               <p class="form-label" style="font-weight: 500">Tulis laporan disini <i class="fas fa-hand-point-down"></i></p>
               <textarea id="story" name="laporan" rows="10" cols="170" placeholder="Tulis laporan anda disini"></textarea>
